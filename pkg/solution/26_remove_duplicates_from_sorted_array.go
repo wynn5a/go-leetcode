@@ -23,16 +23,16 @@ func removeDuplicatesFromSortedArray(array []int) int {
 }
 
 func Run26() {
-	fmt.Println("-- LeetCode NO.26 begin")
+	fmt.Println("--- LeetCode NO.26 begin")
 	sortedArray := make([]int, 10)
 	rand.Seed(time.Now().UTC().UnixNano())
 	for i, _ := range sortedArray {
 		sortedArray[i] = rand.Intn(10)
 	}
 	sort.Ints(sortedArray)
-	fmt.Println("input array:", fmt.Sprint(sortedArray))
+	fmt.Println("input array  :", fmt.Sprint(sortedArray))
 	ans := removeDuplicatesFromSortedArray(sortedArray)
-	fmt.Println("answer:", ans)
+	fmt.Println("answer       :", ans)
 	fmt.Println("after removal:", fmt.Sprint(sortedArray[0:ans]))
-	fmt.Println("-- LeetCode NO.26 end")
+	fmt.Println("LeetCode NO.26 end")
 }
