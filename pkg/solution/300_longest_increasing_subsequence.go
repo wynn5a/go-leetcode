@@ -35,19 +35,9 @@ func dpOnly(array []int32) int {
 		}
 	}
 
-	return maxInArray(dp)
+	return MaxInArray(dp)
 }
 
-// maxInArray find max value from array
-func maxInArray(a []int) int {
-	m := 0
-	for i, e := range a {
-		if i == 0 || e > m {
-			m = e
-		}
-	}
-	return m
-}
 
 func Run300() {
 	fmt.Println("--- LeetCode NO.300 begin")
