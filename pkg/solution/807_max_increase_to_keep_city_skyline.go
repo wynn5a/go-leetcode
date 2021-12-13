@@ -17,10 +17,19 @@ import (
 //            [3, 3, 3, 3] ]
 func maxIncreaseKeepingSkyline(grid [][]int) int {
 	//find max value of row and column
-	maxRow := findMaxRowValue(grid)
-	fmt.Printf("max row: %v \n", maxRow)
-	maxCol := findMaxColumnValue(grid)
+	l:=len(grid)
+	maxRow :=make([]int, l)
+	maxCol := make([]int ,l)
+
+	for i, row := range grid {
+		for j, value := range row {
+			maxRow[i] = Max(maxRow[i], value)
+			maxCol[j] = Max(maxCol[j], value)
+		}
+	}
+
 	fmt.Printf("max col: %v \n", maxCol)
+	fmt.Printf("max row: %v \n", maxRow)
 
 	var result int
 	for i, row := range grid {
