@@ -1,5 +1,6 @@
 package solution1220
 
+//动态规划
 func countVowelPermutation(n int) (ans int) {
 	const mod int = 1e9 + 7
 	dp := [5]int{1, 1, 1, 1, 1}
