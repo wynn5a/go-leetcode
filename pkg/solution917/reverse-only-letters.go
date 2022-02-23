@@ -3,13 +3,15 @@ package solution917
 func reverseOnlyLetters(s string) string {
 	r := []rune(s)
 	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
-		if !isLetter(r[i]) {
+		for !isLetter(r[i]) && i < len(s)-1 {
 			i++
 		}
-		if !isLetter(r[j]) {
+		for !isLetter(r[j]) && j > 0 {
 			j--
 		}
-		r[i], r[j] = r[j], r[i]
+		if i < j {
+			r[i], r[j] = r[j], r[i]
+		}
 	}
 	return string(r)
 }

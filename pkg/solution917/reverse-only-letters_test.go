@@ -26,3 +26,11 @@ func TestCase3(t *testing.T) {
 		t.Errorf("reverseOnlyLetters('%s')='%s', expected '%s'", s, actual, expected)
 	}
 }
+func TestCase4(t *testing.T) {
+	s := "7_28}9{_2"
+	expected := "7_28}9{_2"
+	actual := reverseOnlyLetters(s)
+	if expected != actual {
+		t.Errorf("reverseOnlyLetters('%s')='%s', expected '%s'", s, actual, expected)
+	}
+}
