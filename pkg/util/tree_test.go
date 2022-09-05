@@ -13,6 +13,7 @@ func TestArray2TreeNode(t *testing.T) {
 
 func visit(root *TreeNode) {
 	if root == nil {
+		fmt.Println("null")
 		return
 	}
 	fmt.Println(root.Val)
