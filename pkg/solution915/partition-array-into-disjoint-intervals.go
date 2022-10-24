@@ -10,11 +10,11 @@ func partitionDisjoint(nums []int) int {
 	}
 
 	maxLeft := nums[0]
-	for i := 0; i < n-1; i++ {
+	for i := 1; i < n; i++ {
 		if maxLeft <= minRight[i] {
 			return i
 		}
-		if nums[i] >= maxLeft {
+		if nums[i] > maxLeft {
 			maxLeft = nums[i]
 		}
 	}

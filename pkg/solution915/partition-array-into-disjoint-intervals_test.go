@@ -19,3 +19,12 @@ func TestCase2(t *testing.T) {
 		t.Errorf("Test failed with actual: %d, expected: %d", actual, expected)
 	}
 }
+
+func TestCase3(t *testing.T) {
+	nums := []int{1, 1}
+	expected := 1
+	actual := partitionDisjoint(nums)
+	if expected != actual {
+		t.Errorf("Test failed with actual: %d, expected: %d", actual, expected)
+	}
+}
