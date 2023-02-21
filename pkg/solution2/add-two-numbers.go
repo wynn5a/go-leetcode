@@ -20,7 +20,7 @@ func addTwoNumbers(l1 *u.ListNode, l2 *u.ListNode) *u.ListNode {
 		}
 		r := v1 + v2 + tmp
 		if r >= 10 {
-			tmp = r / 10
+			tmp = 1
 			r = r % 10
 		} else {
 			tmp = 0
