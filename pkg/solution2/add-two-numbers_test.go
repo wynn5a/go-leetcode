@@ -7,8 +7,8 @@ import (
 )
 
 func TestCase1(t *testing.T) {
-	l1 := util.NewListNode([]int{2, 4, 3})
-	l2 := util.NewListNode([]int{5, 6, 4})
+	l1 := util.NewListNodes([]int{2, 4, 3})
+	l2 := util.NewListNodes([]int{5, 6, 4})
 
 	actual := util.ListNodeToArray(addTwoNumbers(l1, l2))
 
@@ -21,8 +21,8 @@ func TestCase1(t *testing.T) {
 }
 
 func TestCase2(t *testing.T) {
-	l1 := util.NewListNode([]int{9, 9, 9, 9, 9, 9, 9})
-	l2 := util.NewListNode([]int{9, 9, 9, 9})
+	l1 := util.NewListNodes([]int{9, 9, 9, 9, 9, 9, 9})
+	l2 := util.NewListNodes([]int{9, 9, 9, 9})
 
 	actual := util.ListNodeToArray(addTwoNumbers(l1, l2))
 

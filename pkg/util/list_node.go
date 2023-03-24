@@ -5,7 +5,14 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func NewListNode(nums []int) (r *ListNode) {
+func NewListNode(val int) (r *ListNode) {
+	return &ListNode{
+		Val:  val,
+		Next: nil,
+	}
+}
+
+func NewListNodes(nums []int) (r *ListNode) {
 	var t *ListNode
 	for _, v := range nums {
 		if r == nil {
