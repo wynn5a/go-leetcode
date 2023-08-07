@@ -75,7 +75,7 @@ func Run21() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	min := 2
 	max := 30
-	for i, _ := range sortedArray {
+	for i := range sortedArray {
 		sortedArray[i] = rand.Intn(max-min+1) + min
 	}
 	sort.Ints(sortedArray)
