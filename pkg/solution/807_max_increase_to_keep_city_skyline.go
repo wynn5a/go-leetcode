@@ -3,23 +3,23 @@ package solution
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
-//Input: grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]
-//Output: 35
-//Explanation: The building heights are shown in the center of the above image.
-//The skylines when viewed from each cardinal direction are drawn in red.
-//The grid after increasing the height of buildings without affecting skylines is:
-//gridNew = [ [8, 4, 8, 7],
-//            [7, 4, 7, 7],
-//            [9, 4, 8, 7],
-//            [3, 3, 3, 3] ]
+// Input: grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]
+// Output: 35
+// Explanation: The building heights are shown in the center of the above image.
+// The skylines when viewed from each cardinal direction are drawn in red.
+// The grid after increasing the height of buildings without affecting skylines is:
+// gridNew = [ [8, 4, 8, 7],
+//
+//	[7, 4, 7, 7],
+//	[9, 4, 8, 7],
+//	[3, 3, 3, 3] ]
 func maxIncreaseKeepingSkyline(grid [][]int) int {
 	//find max value of row and column
-	l:=len(grid)
-	maxRow :=make([]int, l)
-	maxCol := make([]int ,l)
+	l := len(grid)
+	maxRow := make([]int, l)
+	maxCol := make([]int, l)
 
 	for i, row := range grid {
 		for j, value := range row {
@@ -70,8 +70,6 @@ func findMaxRowValue(grid [][]int) []int {
 
 func Run807() {
 	fmt.Println("Run 807 solution begin:")
-	//Provide seed
-	rand.Seed(time.Now().Unix())
 
 	//Generate a random array of length n
 	var m [][]int

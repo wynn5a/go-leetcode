@@ -14,31 +14,31 @@ func Constructor() RandomizedSet {
 	}
 }
 
-func (this *RandomizedSet) Insert(val int) bool {
-	if _, ok := this.m[val]; ok {
+func (s *RandomizedSet) Insert(val int) bool {
+	if _, ok := s.m[val]; ok {
 		return false
 	}
-	this.m[val] = len(this.a)
-	this.a = append(this.a, val)
+	s.m[val] = len(s.a)
+	s.a = append(s.a, val)
 	return true
 }
 
-func (this *RandomizedSet) Remove(val int) bool {
-	if _, ok := this.m[val]; !ok {
+func (s *RandomizedSet) Remove(val int) bool {
+	if _, ok := s.m[val]; !ok {
 		return false
 	}
-	last := len(this.a) - 1
-	if val != this.a[last] {
-		this.a[this.m[val]] = this.a[last]
-		this.m[this.a[last]] = this.m[val]
+	last := len(s.a) - 1
+	if val != s.a[last] {
+		s.a[s.m[val]] = s.a[last]
+		s.m[s.a[last]] = s.m[val]
 	}
-	this.a = this.a[:last]
-	delete(this.m, val)
+	s.a = s.a[:last]
+	delete(s.m, val)
 	return true
 }
 
-func (this *RandomizedSet) GetRandom() int {
-	return this.a[rand.Intn(len(this.a))]
+func (s *RandomizedSet) GetRandom() int {
+	return s.a[rand.Intn(len(s.a))]
 }
 
 /**

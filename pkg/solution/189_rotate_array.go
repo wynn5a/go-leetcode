@@ -3,7 +3,6 @@ package solution
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
 // RotateArray is working as:
@@ -43,8 +42,8 @@ func solution2(array []int, k int) {
 // time: O(n) & space: O(1)
 func solution3(array []int, k int) {
 	k %= len(array)
-	reverse(array, 0, len(array) - 1)
-	reverse(array, 0, k - 1)
+	reverse(array, 0, len(array)-1)
+	reverse(array, 0, k-1)
 	reverse(array, k, len(array)-1)
 }
 
@@ -57,8 +56,7 @@ func reverse(a []int, start int, end int) {
 func Run189() {
 	fmt.Println("--- LeetCode NO.189 begin")
 	input := make([]int, 10)
-	rand.Seed(time.Now().UTC().UnixNano())
-	for i, _ := range input {
+	for i := range input {
 		input[i] = rand.Intn(20)
 	}
 	fmt.Println("input array      :", fmt.Sprint(input))

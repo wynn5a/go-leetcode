@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math/rand"
 	"sort"
-	"time"
 )
 
 // removeDuplicatesFromSortedArray is working as :
@@ -25,8 +24,7 @@ func removeDuplicatesFromSortedArray(array []int) int {
 func Run26() {
 	fmt.Println("--- LeetCode NO.26 begin")
 	sortedArray := make([]int, 10)
-	rand.Seed(time.Now().UTC().UnixNano())
-	for i, _ := range sortedArray {
+	for i := range sortedArray {
 		sortedArray[i] = rand.Intn(10)
 	}
 	sort.Ints(sortedArray)

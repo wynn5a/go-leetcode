@@ -6,17 +6,17 @@ import (
 	"sort"
 )
 
-//There are n different online courses numbered from 1 to n.
-//You are given an array courses where courses[i] = [durationi, lastDayi] indicate that
-//the ith course should be taken continuously for durationi days and must be finished before or on lastDayi.
+// There are n different online courses numbered from 1 to n.
+// You are given an array courses where courses[i] = [durationi, lastDayi] indicate that
+// the ith course should be taken continuously for durationi days and must be finished before or on lastDayi.
 //
-//You will start on the 1st day and you cannot take two or more courses simultaneously.
-//Input: courses = [[100,200],[200,1300],[1000,1250],[2000,3200]]
-//Output: 3
-//Input: courses = [[1,2]]
-//Output: 1
-//Input: courses = [[3,2],[4,3]]
-//Output: 0
+// You will start on the 1st day and you cannot take two or more courses simultaneously.
+// Input: courses = [[100,200],[200,1300],[1000,1250],[2000,3200]]
+// Output: 3
+// Input: courses = [[1,2]]
+// Output: 1
+// Input: courses = [[3,2],[4,3]]
+// Output: 0
 func scheduleCourse(courses [][]int) int {
 	//sort by lastDay of course
 	sort.Slice(courses, func(i, j int) bool {
@@ -44,12 +44,12 @@ func scheduleCourse(courses [][]int) int {
 	return h.Len()
 }
 
-//Heap implement sort.Interface and Heap interface
+// Heap implement sort.Interface and Heap interface
 type Heap struct {
 	sort.IntSlice
 }
 
-func (h Heap) Less(i, j int) bool {
+func (h *Heap) Less(i, j int) bool {
 	return h.IntSlice[i] > h.IntSlice[j]
 }
 

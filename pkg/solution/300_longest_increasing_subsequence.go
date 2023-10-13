@@ -3,7 +3,6 @@ package solution
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
 // FindLongestIncreasingSubsequence will find the length of longest increasing subsequence
@@ -38,12 +37,10 @@ func dpOnly(array []int32) int {
 	return MaxInArray(dp)
 }
 
-
 func Run300() {
 	fmt.Println("--- LeetCode NO.300 begin")
 	input := make([]int32, 10)
-	rand.Seed(time.Now().UTC().UnixNano())
-	for i, _ := range input {
+	for i := range input {
 		input[i] = rand.Int31n(100)
 	}
 	fmt.Println("input array      :", fmt.Sprint(input))

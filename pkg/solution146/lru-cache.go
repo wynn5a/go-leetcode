@@ -31,52 +31,52 @@ func Constructor(capacity int) LRUCache {
 	return l
 }
 
-func (this *LRUCache) Get(key int) int {
-	if _, ok := this.cache[key]; !ok {
+func (c *LRUCache) Get(key int) int {
+	if _, ok := c.cache[key]; !ok {
 		return -1
 	}
-	node := this.cache[key]
-	this.moveToHead(node)
+	node := c.cache[key]
+	c.moveToHead(node)
 	return node.value
 }
 
-func (this *LRUCache) Put(key int, value int) {
-	if _, ok := this.cache[key]; !ok {
+func (c *LRUCache) Put(key int, value int) {
+	if _, ok := c.cache[key]; !ok {
 		node := initDLinkedNode(key, value)
-		this.cache[key] = node
-		this.addToHead(node)
-		this.size++
-		if this.size > this.capacity {
-			removed := this.removeTail()
-			delete(this.cache, removed.key)
-			this.size--
+		c.cache[key] = node
+		c.addToHead(node)
+		c.size++
+		if c.size > c.capacity {
+			removed := c.removeTail()
+			delete(c.cache, removed.key)
+			c.size--
 		}
 	} else {
-		node := this.cache[key]
+		node := c.cache[key]
 		node.value = value
-		this.moveToHead(node)
+		c.moveToHead(node)
 	}
 }
 
-func (this *LRUCache) addToHead(node *DLinkedNode) {
-	node.prev = this.head
-	node.next = this.head.next
-	this.head.next.prev = node
-	this.head.next = node
+func (c *LRUCache) addToHead(node *DLinkedNode) {
+	node.prev = c.head
+	node.next = c.head.next
+	c.head.next.prev = node
+	c.head.next = node
 }
 
-func (this *LRUCache) removeNode(node *DLinkedNode) {
+func (c *LRUCache) removeNode(node *DLinkedNode) {
 	node.prev.next = node.next
 	node.next.prev = node.prev
 }
 
-func (this *LRUCache) moveToHead(node *DLinkedNode) {
-	this.removeNode(node)
-	this.addToHead(node)
+func (c *LRUCache) moveToHead(node *DLinkedNode) {
+	c.removeNode(node)
+	c.addToHead(node)
 }
 
-func (this *LRUCache) removeTail() *DLinkedNode {
-	node := this.tail.prev
-	this.removeNode(node)
+func (c *LRUCache) removeTail() *DLinkedNode {
+	node := c.tail.prev
+	c.removeNode(node)
 	return node
 }

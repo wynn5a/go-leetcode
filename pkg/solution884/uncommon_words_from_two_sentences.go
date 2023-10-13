@@ -15,7 +15,7 @@ func uncommonFromSentences(s1 string, s2 string) []string {
 	insert(s1)
 	insert(s2)
 
-	ans := []string{}
+	var ans []string
 	for word, occ := range freq {
 		if occ == 1 {
 			ans = append(ans, word)

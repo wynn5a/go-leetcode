@@ -1,7 +1,7 @@
 package solution306
 
 func stringAdd(x, y string) string {
-	res := []byte{}
+	var res []byte
 	carry, cur := 0, 0
 	for x != "" || y != "" || carry != 0 {
 		cur = carry

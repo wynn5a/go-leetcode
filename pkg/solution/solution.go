@@ -5,7 +5,6 @@ import (
 	"math/rand"
 	"sort"
 	"strconv"
-	"time"
 )
 
 type ListNode struct {
@@ -62,7 +61,6 @@ func mergeTwoSortedLists(l1 *ListNode, l2 *ListNode) *ListNode {
 
 func Run21() {
 	fmt.Println("--- LeetCode NO.21 begin")
-	rand.Seed(time.Now().UTC().UnixNano())
 	var header1 = ListNode{
 		Val:  1,
 		Next: nil,
@@ -72,11 +70,10 @@ func Run21() {
 		Next: nil,
 	}
 	sortedArray := make([]int, 10)
-	rand.Seed(time.Now().UTC().UnixNano())
-	min := 2
-	max := 30
+	m := 2
+	end := 30
 	for i := range sortedArray {
-		sortedArray[i] = rand.Intn(max-min+1) + min
+		sortedArray[i] = rand.Intn(end-m+1) + m
 	}
 	sort.Ints(sortedArray)
 	for i := 0; i < 10; i++ {
