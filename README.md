@@ -1,15 +1,19 @@
 # go-leetcode
-Leetcode solution in Golang
+Leetcode solution in Go
 
-# How to run
-
+# How to use
 You can check all solutions by testing
 
 ```shell
 go test ./...
 ```
 
+# Now, we have
 
-## TODO
+- [x] A README file accompanies each problem to provide an explanation
 
-* Add a README for each solution and explain it.
+- [x] A runnable test for each solution ensuring correctness
+
+- [x] The simplest code for each solution to ensure ease of understanding
+
+
