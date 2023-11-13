@@ -14,6 +14,9 @@
 - 输入单词数组 `words` 至少包含一个单词。
 
 # 示例
+
+示例一
+
 ```
 输入: words = ["This", "is", "an", "example", "of", "text", "justification."], maxWidth = 16
 输出:
@@ -23,6 +26,8 @@
 "justification.  "
 ]
 ```
+
+示例二
 
 ```
 输入:words = ["What","must","be","acknowledgment","shall","be"], maxWidth = 16
@@ -36,6 +41,8 @@
      因为最后一行应为左对齐，而不是左右两端对齐。       
      第二行同样为左对齐，这是因为这行只包含一个单词。
 ```
+
+示例三
 
 ```
 输入:words = ["Science","is","what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do"]，maxWidth = 20

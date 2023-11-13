@@ -24,6 +24,7 @@ func lastLine(line []string, width int) string {
 	for _, word := range line {
 		result += word + " "
 	}
+	result = result[:len(result)-1]
 	result += spaces(width - len(result))
 	return result
 }
