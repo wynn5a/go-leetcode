@@ -5,13 +5,13 @@ func isAnagram(s string, t string) bool {
 		return false
 	}
 
-	m := make(map[uint8]int)
+	count := [26]int{}
 	for i := 0; i < len(s); i++ {
-		m[s[i]]++
-		m[t[i]]--
+		count[s[i]-'a']++
+		count[t[i]-'a']--
 	}
-	for _, value := range m {
-		if value != 0 {
+	for _, c := range count {
+		if c != 0 {
 			return false
 		}
 	}
